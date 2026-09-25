@@ -61,14 +61,11 @@ Test project /home/vboxuser/workspace/lab05/_build
 Total Test time (real) =   0.02 sec
 ```
 ## Code coverage
---------------
-|     File        | Coverage |
---------------
-| Account.cpp     |	100% ✅  |
---------------
-| Transaction.cpp |	100% ✅  |
---------------
-| Total           |	100% ✅  |
----------------
+
+| File | Coverage |
+|-------|---------|
+| `Account.cpp` | 100% ✅ |
+| `Transaction.cpp` |	100% ✅ |
+| **Total** | **100% ✅** |
 
 
