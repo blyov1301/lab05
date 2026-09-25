@@ -1,0 +1,21 @@
+language: cpp
+compiler:
+  - gcc
+  - clang
+dist: focal
+
+addons:
+  apt:
+    packages:
+      - lcov
+
+before_install:
+  - pip install --user cpp-coveralls
+
+script:
+  - cmake -S . -B _build -DBUILD_TESTS=ON -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage"
+  - cmake --build _build
+  - ctest --test-dir _build --output-on-failure
+
+after_success:
+  - coveralls --root . -E ".*gtest.*" -E ".*CMakeFiles.*" -E ".*third-party.*"
